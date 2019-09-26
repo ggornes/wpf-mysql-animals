@@ -6,7 +6,102 @@
         xmlns:local="clr-namespace:GGG_MySQL_WPF_Animals"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top"
+              HorizontalAlignment="Left"
+              VerticalAlignment="Top" Width="782">
+            <MenuItem x:Name="FileMenu"
+                        Header="_File">
+                <MenuItem Header="Exit"/>
+            </MenuItem>
+            <MenuItem Header="_Animals"/>
+            <MenuItem Header="_Users"/>
+            <MenuItem Header="_Locations"/>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_Help"/>
+            </MenuItem>
+
+        </Menu>
+
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBar.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="36" />
+                            <ColumnDefinition Width="36" />
+                            <ColumnDefinition Width="36" />
+                            <ColumnDefinition Width="20" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </StatusBar.ItemsPanel>
+
+            <StatusBarItem>
+                <TextBlock x:Name="MessageTextBlock">Loading...</TextBlock>
+            </StatusBarItem>
+
+            <Separator Grid.Column="1"
+                       Margin="5"
+                       Width="1"
+                       Foreground="Gray"/>
+
+            <StatusBarItem Grid.Column="2">
+                <TextBlock>Set</TextBlock>
+            </StatusBarItem>
+
+            <Separator Grid.Column="3"
+                       Margin="5"
+                       Width="1"
+                       Foreground="DimGray"/>
+
+            <StatusBarItem Grid.Column="4"
+                       x:Name="NumLockStatus"
+                       Foreground="Gray"
+                       HorizontalAlignment="Center">
+                <TextBlock>NUM</TextBlock>
+            </StatusBarItem>
+
+            <StatusBarItem Grid.Column="5"
+                           x:Name="CapsLockStatus"
+                           Foreground="Gray"
+                           HorizontalContentAlignment="Center">
+                <TextBlock>CAPS</TextBlock>
+
+            </StatusBarItem>
+
+            <StatusBarItem Grid.Column="6"
+                           x:Name="ScrollLockStatus"
+                           Foreground="Gray"
+                           HorizontalContentAlignment="Center">
+                <TextBlock>SCRL</TextBlock>
+
+            </StatusBarItem>
+
+            <StatusBarItem Grid.Column="7">
+                <Ellipse Width="14"
+                         Height="14"
+                         Fill="Green">
+
+                </Ellipse>
+            </StatusBarItem>
+
+
+
+
+        </StatusBar>
+
+
+    </DockPanel>
+    
+    
+
 </Window>
